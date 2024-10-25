@@ -1,4 +1,5 @@
 import configuration as conf
+import random
 
 class Hero():
     def __init__(self, name):
@@ -19,3 +20,6 @@ class Game():
 
     def start(self):
         pass
+
+game = Game()
+game.start()
