@@ -13,7 +13,9 @@ class Hero():
         other.health -= self.attack_power
 
     def is_alive(self):
-        pass
+        if self.health > 0:
+            return True
+        return False
 
 class Game():
     def __init__(self, player, computer):
@@ -23,7 +25,7 @@ class Game():
     def start(self):
         pass
 
-def test_attack():
+def test_attack_is_alive():
     hero1 = Hero("Nina")
     hero2 = Hero("computer")
     print(hero1.health)
@@ -31,14 +33,18 @@ def test_attack():
     while hero1.health > 0 and hero2.health > 0:
         print("Первый атакует")
         hero1.attack(hero2)
-        print(hero1.health)
-        print(hero2.health)
+        print(f"hero1 - {hero1.health}")
+        print(hero1.is_alive())
+        print(f"hero2 - {hero2.health}")
+        print(hero2.is_alive())
         print("Комп атакует")
         hero2.attack(hero1)
-        print(hero1.health)
-        print(hero2.health)
+        print(f"hero1 - {hero1.health}")
+        print(hero1.is_alive())
+        print(f"hero2 - {hero2.health}")
+        print(hero2.is_alive())
 
-#тестирование метода attack
-#test_attack()
+    #тестирование метода attack
+test_attack_is_alive()
 # game = Game()
 # game.start()
